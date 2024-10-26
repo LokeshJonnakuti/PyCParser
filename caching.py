@@ -15,6 +15,8 @@
 
 import sys
 import os, os.path
+import fickling
+
 if sys.version_info.major == 2:
     import cparser
     from cparser_utils import *
@@ -96,8 +98,7 @@ class DbObj:
                 return obj
             else:
                 return None
-        import pickle
-        obj = pickle.load(f)
+        obj = fickling.load(f)
         f.close()
         return obj
     @classmethod
